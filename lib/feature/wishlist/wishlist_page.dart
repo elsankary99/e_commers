@@ -6,17 +6,15 @@ class WishlistPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        physics: const BouncingScrollPhysics(),
-        itemCount: 20,
-        itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-            child: WishlistItem(),
-          );
-        },
-      ),
+    return ListView.builder(
+      physics: const BouncingScrollPhysics(),
+      itemCount: 20,
+      itemBuilder: (context, index) {
+        return const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+          child: WishlistItem(),
+        );
+      },
     );
   }
 }

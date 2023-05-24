@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage>
     FontAwesomeIcons.cartShopping,
     FontAwesomeIcons.magnifyingGlass,
   ];
-  List<Widget> pages = const [
+  List<Widget> pages = [
     HomePageBody(),
     WishlistPage(),
     CartPage(),
@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorManager.backGroundColor,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: ColorManager.primaryColor,
