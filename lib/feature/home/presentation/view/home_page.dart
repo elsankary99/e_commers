@@ -1,11 +1,48 @@
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:shop/core/manager/color_manager.dart';
-import 'package:shop/feature/home/presentation/widget/home_page_bodu.dart';
+import 'package:shop/feature/cart/cart_page.dart';
+import 'package:shop/feature/home/presentation/widget/home_page_body.dart';
+import 'package:shop/feature/search/search_page.dart';
+import 'package:shop/feature/wishlist/wishlist_page.dart';
 
 @RoutePage()
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  late TabController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = TabController(
+      length: 4,
+      vsync: this,
+    );
+    controller.addListener(() {
+      setState(() {});
+    });
+  }
+
+  List<IconData> iconList = [
+    Icons.home,
+    Icons.home,
+    Icons.home,
+    Icons.home,
+  ];
+  List<Widget> pages = [
+    HomePageBody(),
+    WishlistPage(),
+    CartPage(),
+    SearchPage()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +64,23 @@ class HomePage extends StatelessWidget {
               ),
             )),
       ),
-      body: HomePageBody(),
+      body: TabBarView(
+        physics: const NeverScrollableScrollPhysics(),
+        controller: controller,
+        children: pages,
+      ),
+      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: AnimatedBottomNavigationBar(
+        icons: iconList,
+        gapLocation: GapLocation.center,
+        notchSmoothness: NotchSmoothness.sharpEdge,
+        activeColor: ColorManager.primaryColor,
+        activeIndex: controller.index,
+        onTap: controller.animateTo,
+
+        //other params
+      ),
     );
   }
 }
