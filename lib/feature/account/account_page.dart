@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Accountpage extends StatelessWidget {
-  const Accountpage({super.key});
+class AccountPage extends StatelessWidget {
+  const AccountPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Acount Page"),
+    return const Center(
+      child: Text("Account Page"),
     );
   }
 }

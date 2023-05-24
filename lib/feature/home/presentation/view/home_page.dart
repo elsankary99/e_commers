@@ -1,6 +1,7 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shop/core/manager/color_manager.dart';
 import 'package:shop/feature/cart/cart_page.dart';
 import 'package:shop/feature/home/presentation/widget/home_page_body.dart';
@@ -32,12 +33,12 @@ class _HomePageState extends State<HomePage>
   }
 
   List<IconData> iconList = [
-    Icons.home,
-    Icons.home,
-    Icons.home,
-    Icons.home,
+    FontAwesomeIcons.house,
+    FontAwesomeIcons.solidHeart,
+    FontAwesomeIcons.cartShopping,
+    FontAwesomeIcons.magnifyingGlass,
   ];
-  List<Widget> pages = [
+  List<Widget> pages = const [
     HomePageBody(),
     WishlistPage(),
     CartPage(),

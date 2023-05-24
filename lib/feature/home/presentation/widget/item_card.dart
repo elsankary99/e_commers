@@ -19,10 +19,10 @@ class ItemCard extends StatelessWidget {
           const Text(
             "BIDEN Mens Watches",
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
                   "\$ 199",
