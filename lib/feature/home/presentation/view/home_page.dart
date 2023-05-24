@@ -1,6 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:shop/core/manager/color_manager.dart';
+import 'package:shop/feature/home/presentation/widget/home_page_bodu.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
@@ -26,6 +27,7 @@ class HomePage extends StatelessWidget {
               ),
             )),
       ),
+      body: HomePageBody(),
     );
   }
 }
