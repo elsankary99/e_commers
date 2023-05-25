@@ -21,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
         seconds: 3,
       ),
       () {
-        router.replace(const HomeRoute());
+        router.replace(const LoginRoute());
       },
     );
     super.initState();

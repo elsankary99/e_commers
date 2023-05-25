@@ -10,7 +10,7 @@ class CartPage extends StatelessWidget {
       itemCount: 10,
       physics: const BouncingScrollPhysics(),
       itemBuilder: (context, index) {
-        return CartPageItem();
+        return const CartPageItem();
       },
     );
   }
@@ -52,8 +52,8 @@ class _CartPageItemState extends State<CartPageItem> {
                     children: [
                       Container(
                         width: 80,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 3),
                         color: Colors.grey[300],
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -66,14 +66,14 @@ class _CartPageItemState extends State<CartPageItem> {
                                         });
                                       }
                                     : null,
-                                child: Text(
+                                child: const Text(
                                   "-",
                                   style: TextStyle(fontSize: 24),
                                 ),
                               ),
                               Text(
                                 "$count",
-                                style: TextStyle(fontSize: 18),
+                                style: const TextStyle(fontSize: 18),
                               ),
                               InkWell(
                                 onTap: () {
@@ -81,17 +81,17 @@ class _CartPageItemState extends State<CartPageItem> {
                                     count++;
                                   });
                                 },
-                                child: Text(
+                                child: const Text(
                                   "+",
                                   style: TextStyle(fontSize: 24),
                                 ),
                               ),
                             ]),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
-                      RemoveButton(),
+                      const RemoveButton(),
                     ],
                   )
                 ],

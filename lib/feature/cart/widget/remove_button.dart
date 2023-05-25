@@ -8,7 +8,7 @@ class RemoveButton extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         decoration: BoxDecoration(
             border: Border.all(color: Colors.red),
             borderRadius: BorderRadius.circular(16)),

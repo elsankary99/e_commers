@@ -4,6 +4,8 @@ import 'package:shop/feature/home/data/delay_cubit/delay_cubit.dart';
 import 'package:shop/feature/home/presentation/widget/item_card.dart';
 
 class HomePageBody extends StatelessWidget {
+  const HomePageBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<DelayCubit, DelayState>(builder: (context, state) {

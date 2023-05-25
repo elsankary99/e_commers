@@ -39,10 +39,10 @@ class _HomePageState extends State<HomePage>
     FontAwesomeIcons.magnifyingGlass,
   ];
   List<Widget> pages = [
-    HomePageBody(),
-    WishlistPage(),
-    CartPage(),
-    SearchPage()
+    const HomePageBody(),
+    const WishlistPage(),
+    const CartPage(),
+    const SearchPage()
   ];
 
   @override
