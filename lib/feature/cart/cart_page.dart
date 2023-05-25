@@ -59,11 +59,13 @@ class _CartPageItemState extends State<CartPageItem> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    count--;
-                                  });
-                                },
+                                onTap: count > 1
+                                    ? () {
+                                        setState(() {
+                                          count--;
+                                        });
+                                      }
+                                    : null,
                                 child: Text(
                                   "-",
                                   style: TextStyle(fontSize: 24),
