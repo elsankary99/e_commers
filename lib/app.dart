@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shop/core/router/app_router.dart';
 import 'package:shop/feature/login/data/classes/language_constant.dart';
@@ -36,11 +37,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      // th
       //!
 
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: _locale, //!<---//
+      // locale: _locale, //!<---//
+      locale: Locale("en"), //!<---//
       //!
 
       debugShowCheckedModeBanner: false,

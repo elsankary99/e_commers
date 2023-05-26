@@ -13,7 +13,7 @@ class ProductRepoImplement extends ProductRepo {
       var response = await Dio().get(baseUrl);
       List<Products> productsList = [];
       for (var product in response.data) {
-        productsList.add(product);
+        productsList.add(Products.fromJson(product));
       }
       return Right(productsList);
     } on Exception catch (e) {

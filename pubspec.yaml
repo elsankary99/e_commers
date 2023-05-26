@@ -42,6 +42,8 @@ dependencies:
   flutter_riverpod: ^2.3.6
   flutter_svg: ^2.0.6
   font_awesome_flutter: ^10.4.0
+  get: ^4.6.5
+  get_storage: ^2.1.1
   google_fonts: ^4.0.5
   intl: any
   shared_preferences: ^2.1.1

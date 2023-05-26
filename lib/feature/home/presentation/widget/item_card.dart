@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shop/core/utils/add_to_cart_button.dart';
+import 'package:shop/feature/home/data/models/products/products.dart';
 
 class ItemCard extends StatelessWidget {
-  const ItemCard({super.key});
+  final Products product;
+  const ItemCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -12,22 +14,33 @@ class ItemCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 15),
         child:
             Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          Image.network(
-            "https://m.media-amazon.com/images/I/71VjM5LOeYL._AC_UL1500_.jpg",
-            height: 100,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Image.network(
+              product.image ??
+                  "https://m.media-amazon.com/images/I/71VjM5LOeYL._AC_UL1500_.jpg",
+              height: 100,
+            ),
           ),
-          const Text(
-            "BIDEN Mens Watches",
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Text(
+              product.title!,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
-                  "\$ 199",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.grey),
+                child: Expanded(
+                  child: Text(
+                    "\$ ${product.price}",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.grey),
+                  ),
                 ),
               ),
               AddToCart(),
