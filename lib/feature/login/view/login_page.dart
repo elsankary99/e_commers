@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop/core/manager/color_manager.dart';
 import 'package:shop/core/manager/image_assets_manager.dart';
+import 'package:shop/feature/login/data/classes/language_constant.dart';
 import 'package:shop/feature/login/view/widget/sign_in_page_body.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:shop/feature/login/view/widget/dropdwon_button.dart';
 
 @RoutePage()
@@ -26,7 +26,7 @@ class LoginPage extends StatelessWidget {
               height: 15,
             ),
             Text(
-              AppLocalizations.of(context)!.sign_in,
+              translation(context).signIn,
               style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,

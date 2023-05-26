@@ -15,7 +15,7 @@ class CustomTextFormField extends StatelessWidget {
       child: TextFormField(
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return "Please enter your $errorMessage";
+            return "Please enter your ";
           }
           return null;
         },

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop/core/manager/color_manager.dart';
+import 'package:shop/core/router/app_router.dart';
+import 'package:shop/feature/login/data/classes/language_constant.dart';
 import 'package:shop/feature/login/view/widget/custom_text_form_field.dart';
 
 class SignInPageBody extends StatefulWidget {
@@ -25,7 +27,7 @@ class _SignInPageBodyState extends State<SignInPageBody> {
             const SizedBox(
               height: 50,
             ),
-            const Text("Clothes Shop",
+            Text(translation(context).clothesShop,
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -33,16 +35,16 @@ class _SignInPageBodyState extends State<SignInPageBody> {
             const SizedBox(
               height: 10,
             ),
-            const Text("please sign in to continue",
-                style: TextStyle(
+            Text(translation(context).pleaseSigin,
+                style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Colors.grey)),
             const SizedBox(
               height: 40,
             ),
-            const CustomTextFormField(errorMessage: "userName"),
-            const CustomTextFormField(errorMessage: "Password"),
+            CustomTextFormField(errorMessage: translation(context).username),
+            CustomTextFormField(errorMessage: translation(context).password),
             const SizedBox(
               height: 35,
             ),
@@ -51,6 +53,7 @@ class _SignInPageBodyState extends State<SignInPageBody> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
+                  router.replace(const HomeRoute());
                   if (_formKey.currentState!.validate()) {
                     print("Success");
                     print("=================================");
@@ -63,17 +66,18 @@ class _SignInPageBodyState extends State<SignInPageBody> {
 
                   // maximumSize: Size(30, 2),
                 ),
-                child: const Text(
-                  "SIGN IN",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                child: Text(
+                  translation(context).signIn,
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
             const SizedBox(
               height: 35,
             ),
-            const Text("Don't have an account ?",
-                style: TextStyle(
+            Text(translation(context).dontHaveAcount,
+                style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Colors.grey)),
@@ -82,9 +86,9 @@ class _SignInPageBodyState extends State<SignInPageBody> {
             ),
             TextButton(
                 onPressed: () {},
-                child: const Text("SIGN UP",
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)))
+                child: Text(translation(context).signUp,
+                    style: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.bold)))
           ]),
         ),
       ),

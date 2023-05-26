@@ -1,8 +1,9 @@
 {
-    "sign_in":"تسجيل الدخول",
-    "clothes_shop":"متجر ملابس",
-    "please_sigin":"من فضلك سجل دخولك للمتابعة",
+    "signIn":"تسجيل الدخول",
+    "signUp":"انشاء حساب",
+    "clothesShop":"متجر ملابس",
+    "pleaseSigin":"من فضلك سجل دخولك للمتابعة",
     "username":"اسم المستخدم",
     "password":"كلمة السر",
-    "dont_have_acount":"ليس لدي حساب ؟",
+    "dontHaveAcount":"ليس لدي حساب ؟"
 }
