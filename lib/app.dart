@@ -1,36 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shop/core/component/applocal.dart';
 import 'package:shop/core/router/app_router.dart';
+import 'package:shop/feature/login/data/classes/language_constant.dart';
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+  //!
+  static void setLocale(BuildContext context, Locale newLocale) {
+    _MyAppState? state = context.findAncestorStateOfType<_MyAppState>();
+    state?.setLocale(newLocale);
+  }
+  //!
+}
+
+class _MyAppState extends State<MyApp> {
+  //!
+  Locale? _locale;
+  setLocale(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
+
+  @override
+  void didChangeDependencies() {
+    getLocale().then((locale) => setLocale(locale));
+    super.didChangeDependencies();
+  }
+  //!
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      localizationsDelegates: [
-        AppLocale.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: [
-        Locale('en'), // English
-        Locale('ar'), // Spanish
-      ],
-      locale: Locale("en"),
-      localeResolutionCallback: (currentLang, supportedLang) {
-        if (currentLang != null) {
-          for (Locale locale in supportedLang) {
-            if (locale.languageCode == currentLang.languageCode) {
-              return currentLang;
-            }
-          }
-        }
-        return supportedLang.first;
-      },
+      //!
+
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: _locale, //!<---//
+      //!
+
       debugShowCheckedModeBanner: false,
       routerConfig: router.config(),
       theme: ThemeData(
@@ -39,3 +51,19 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+    //  localeResolutionCallback: (currentLang, supportedLang) {
+    //     if (currentLang != null) {
+    //       for (Locale locale in supportedLang) {
+    //         if (locale.languageCode == currentLang.languageCode) {
+    //           return currentLang;
+    //         }
+    //       }
+    //     }
+    //     return supportedLang.first;
+    //   },

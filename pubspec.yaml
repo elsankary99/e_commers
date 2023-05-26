@@ -40,6 +40,7 @@ dependencies:
   flutter_svg: ^2.0.6
   font_awesome_flutter: ^10.4.0
   google_fonts: ^4.0.5
+  intl: any
   shared_preferences: ^2.1.1
 
 dev_dependencies:
@@ -53,7 +54,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
 flutter:
-
+  generate: true
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -61,7 +62,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-    - assets/lang/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
