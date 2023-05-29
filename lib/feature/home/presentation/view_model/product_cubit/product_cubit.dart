@@ -1,7 +1,7 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop/feature/home/data/models/products/products.dart';
-import 'package:shop/feature/home/data/repo/product_repo.dart';
+import 'package:shop/feature/home/data/repo/product_repo_impl.dart';
 
 part 'product_state.dart';
 

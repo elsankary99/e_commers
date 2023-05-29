@@ -27,12 +27,12 @@ class CustomTextFormField extends StatelessWidget {
                     style: BorderStyle.solid)),
             errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(
+                borderSide: const BorderSide(
                     color: Colors.red, width: 2, style: BorderStyle.solid)),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
-                borderSide:
-                    BorderSide(color: Colors.grey, style: BorderStyle.solid)),
+                borderSide: const BorderSide(
+                    color: Colors.grey, style: BorderStyle.solid)),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
                 borderSide: const BorderSide(
@@ -41,7 +41,8 @@ class CustomTextFormField extends StatelessWidget {
             border: InputBorder.none,
             hintText: errorMessage,
             fillColor: Colors.white,
-            contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10)),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 20, vertical: 10)),
       ),
     );
   }

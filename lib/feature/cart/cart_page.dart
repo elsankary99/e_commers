@@ -38,7 +38,7 @@ class _CartPageItemState extends State<CartPageItem> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Image.network(
-                  "https://m.media-amazon.com/images/I/71VjM5LOeYL._AC_UL1500_.jpg",
+                  "https://businessyield.com/wp-content/uploads/2021/08/cars-800x500.jpg",
                 ),
               ),
               Column(

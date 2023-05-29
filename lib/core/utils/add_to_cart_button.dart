@@ -11,7 +11,10 @@ class AddToCart extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 15,
+            vertical: 5,
+          ),
           decoration: const BoxDecoration(
               color: ColorManager.primaryColor,
               borderRadius: BorderRadius.only(
@@ -19,7 +22,10 @@ class AddToCart extends StatelessWidget {
                   bottomLeft: Radius.circular(16))),
           child: const Text(
             "Add to Cart",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
           )),
     );
   }

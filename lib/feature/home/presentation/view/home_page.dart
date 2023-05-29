@@ -1,11 +1,13 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:auto_route/annotations.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shop/core/manager/color_manager.dart';
+import 'package:shop/core/theme/theme_service.dart';
 import 'package:shop/feature/cart/cart_page.dart';
-import 'package:shop/feature/home/data/repo/product_repo.dart';
+import 'package:shop/feature/home/data/repo/product_repo_impl.dart';
 import 'package:shop/feature/home/presentation/view_model/product_cubit/product_cubit.dart';
 import 'package:shop/feature/home/presentation/widget/home_page_body.dart';
 import 'package:shop/feature/search/search_page.dart';
@@ -56,6 +58,13 @@ class _HomePageState extends State<HomePage>
       child: Scaffold(
         backgroundColor: ColorManager.backGroundColor,
         appBar: AppBar(
+          actions: [
+            IconButton(
+                onPressed: () {
+                  ThemeService().changeTheme();
+                },
+                icon: Icon(CupertinoIcons.moon_stars))
+          ],
           elevation: 0,
           backgroundColor: ColorManager.primaryColor,
           bottom: const PreferredSize(
@@ -72,10 +81,13 @@ class _HomePageState extends State<HomePage>
                 ),
               )),
         ),
-        body: TabBarView(
-          physics: const NeverScrollableScrollPhysics(),
-          controller: controller,
-          children: pages,
+        body: Directionality(
+          textDirection: TextDirection.ltr,
+          child: TabBarView(
+            physics: const NeverScrollableScrollPhysics(),
+            controller: controller,
+            children: pages,
+          ),
         ),
         floatingActionButton: FloatingActionButton(onPressed: () {}),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

@@ -10,7 +10,7 @@ class CustomDropdownButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return DropdownButton<Language>(
       underline: const SizedBox(),
-      icon: Icon(
+      icon: const Icon(
         Icons.language,
         color: Colors.white,
       ),
@@ -22,11 +22,11 @@ class CustomDropdownButton extends StatelessWidget {
                     children: [
                       Text(
                         e.name,
-                        style: TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 18),
                       ),
                       Text(
                         e.flag,
-                        style: TextStyle(fontSize: 25),
+                        style: const TextStyle(fontSize: 25),
                       ),
                     ]),
               ))
@@ -34,8 +34,8 @@ class CustomDropdownButton extends StatelessWidget {
       onChanged: (Language? language) async {
         if (language != null) {
           //!---->
-          Locale _locale = await setLocale(language.languageCode);
-          MyApp.setLocale(context, _locale);
+          Locale locale = await setLocale(language.languageCode);
+          MyApp.setLocale(context, locale);
         }
       },
     );

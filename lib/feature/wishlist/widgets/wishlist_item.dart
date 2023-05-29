@@ -16,7 +16,7 @@ class WishlistItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Image.network(
-                "https://m.media-amazon.com/images/I/71VjM5LOeYL._AC_UL1500_.jpg",
+                "https://businessyield.com/wp-content/uploads/2021/08/cars-800x500.jpg",
                 // height: 85,
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:shop/core/manager/color_manager.dart';
 import 'package:shop/core/router/app_router.dart';
 import 'package:shop/feature/login/data/classes/language_constant.dart';
@@ -28,7 +29,7 @@ class _SignInPageBodyState extends State<SignInPageBody> {
               height: 50,
             ),
             Text(translation(context).clothesShop,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: ColorManager.primaryColor)),
@@ -53,6 +54,8 @@ class _SignInPageBodyState extends State<SignInPageBody> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
+                  // Get.to(const HomePage());
+
                   router.replace(const HomeRoute());
                   if (_formKey.currentState!.validate()) {
                     print("Success");

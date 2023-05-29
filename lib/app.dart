@@ -3,7 +3,9 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shop/core/router/app_router.dart';
+import 'package:shop/core/theme/theme_service.dart';
 import 'package:shop/feature/login/data/classes/language_constant.dart';
+import 'package:shop/feature/splash/view/splash_page.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -37,7 +39,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      // th
+      // theme: ThemeService().lightTheme,
+      // darkTheme: ThemeService().darkTheme,
+      // themeMode: ThemeService().getThemeMode(),
       //!
 
       localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -49,8 +53,8 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       routerConfig: router.config(),
       theme: ThemeData(
-        textTheme: GoogleFonts.arsenalTextTheme(),
-      ),
+          // textTheme: GoogleFonts.arsenalTextTheme(),
+          ),
     );
   }
 }
